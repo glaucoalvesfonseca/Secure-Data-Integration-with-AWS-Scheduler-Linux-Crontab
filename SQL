@@ -1,0 +1,12 @@
+set head off
+set linesize 1000
+set newpage none
+set pagesize 50000
+
+SELECT CODIGO,
+       NOME,
+       ENDERECO
+FROM CLIENTES
+;
+
+quit
