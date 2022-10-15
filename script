@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source ~/.bash_profile
+
+cd ${TESTE_PATH}
+
+# sqlplus em modo silencioso
+sqlplus -S "/ as sysdba" @clientes.sql | head -n -3 > /tmp/clientes.txt
+
+aws s3 cp /tmp/clientes.txt s3://clientes/atualizados/
